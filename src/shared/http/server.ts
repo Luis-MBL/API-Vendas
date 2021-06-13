@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import 'reflect-metadata';
 import express, { NextFunction, Request, response, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
