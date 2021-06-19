@@ -13,8 +13,7 @@ class DeleteProductService {
     if (!product) {
       throw new AppError('Product not found');
     }
-
-    await productsRepository.delete(product);
+    await productsRepository.delete(id);
   }
 }
 

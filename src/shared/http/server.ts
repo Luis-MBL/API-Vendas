@@ -16,6 +16,7 @@ app.use(routes);
 app.use(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   (error: Error, request: Request, reponse: Response, next: NextFunction) => {
+    console.error(error);
     if (error instanceof AppError) {
       return response
         .status(error.statusCode)

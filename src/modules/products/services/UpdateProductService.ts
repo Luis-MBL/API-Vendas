@@ -18,7 +18,7 @@ class UpdateProductService {
       throw new AppError('Product not found');
     }
 
-    if (data.name) {
+    if (data.name && data.name !== product.name) {
       const productExists = await productsRepository.findByName(data.name);
 
       if (productExists) {
