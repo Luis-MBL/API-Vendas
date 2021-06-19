@@ -20,10 +20,10 @@ class Product {
   @Column('int')
   quantity: number;
 
-  @CreateDateColumn('timestamptz')
+  @CreateDateColumn({ type: 'timestamptz' })
   created_at: Date;
 
-  @UpdateDateColumn('timestamptz')
+  @UpdateDateColumn({ type: 'timestamptz' })
   updated_at: Date;
 }
 
