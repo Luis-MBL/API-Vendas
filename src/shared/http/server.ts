@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import 'reflect-metadata';
-import express, { NextFunction, Request, response, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
+import 'express-async-errors';
 import cors from 'cors';
 import routes from './routes';
 import AppError from '@shared/errors/AppError';
@@ -15,7 +16,7 @@ app.use(routes);
 
 app.use(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  (error: Error, request: Request, reponse: Response, next: NextFunction) => {
+  (error: Error, request: Request, response: Response, next: NextFunction) => {
     console.error(error);
     if (error instanceof AppError) {
       return response
